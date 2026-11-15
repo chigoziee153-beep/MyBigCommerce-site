@@ -1,0 +1,961 @@
+[
+  {
+    "name": "Brand & header",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Site chrome only. Homepage merchandising is edited in Page Builder (not here)."
+      },
+      {
+        "type": "text",
+        "id": "brand_name",
+        "label": "Brand name"
+      },
+      {
+        "type": "text",
+        "id": "brand_subtitle",
+        "label": "Brand subtitle"
+      },
+      {
+        "type": "text",
+        "id": "brand_logo",
+        "label": "Brand logo image path (optional — leave empty for text wordmark)"
+      },
+      {
+        "type": "text",
+        "id": "support_label",
+        "label": "Support button label (leave empty to hide)"
+      },
+      {
+        "type": "text",
+        "id": "support_url",
+        "label": "Support button URL (unused when label is empty)"
+      },
+      {
+        "type": "text",
+        "id": "nav_shop_label",
+        "label": "Procure label (primary purchasing entry)"
+      },
+      {
+        "type": "text",
+        "id": "nav_shop_url",
+        "label": "Procure URL (Browse catalog link in mega-menu)"
+      },
+      {
+        "type": "text",
+        "id": "nav_shop_icon",
+        "label": "Procure icon path (e.g. img/icons/nav-shop.svg)"
+      },
+      {
+        "type": "text",
+        "id": "nav_services_label",
+        "label": "Solutions label"
+      },
+      {
+        "type": "text",
+        "id": "nav_services_url",
+        "label": "Solutions URL"
+      },
+      {
+        "type": "text",
+        "id": "nav_services_icon",
+        "label": "Solutions icon path"
+      },
+      {
+        "type": "text",
+        "id": "nav_learn_label",
+        "label": "Insights label"
+      },
+      {
+        "type": "text",
+        "id": "nav_learn_url",
+        "label": "Insights URL"
+      },
+      {
+        "type": "text",
+        "id": "nav_learn_icon",
+        "label": "Insights icon path"
+      },
+      {
+        "type": "text",
+        "id": "nav_deals_label",
+        "label": "Savings label"
+      },
+      {
+        "type": "text",
+        "id": "nav_deals_url",
+        "label": "Savings URL"
+      },
+      {
+        "type": "text",
+        "id": "nav_deals_icon",
+        "label": "Savings icon path"
+      },
+      {
+        "type": "paragraph",
+        "content": "Buy mega-menu copy (Theme Editor — site header is not a Page Builder region). Category links follow the live catalog."
+      },
+      {
+        "type": "text",
+        "id": "mega_cats_heading",
+        "label": "Mega menu category list heading"
+      },
+      {
+        "type": "text",
+        "id": "mega_browse_label",
+        "label": "Mega menu browse-all label (URL uses Buy URL above)"
+      },
+      {
+        "type": "text",
+        "id": "mega_feature_hint",
+        "label": "Mega featured card hint (leave empty to hide)"
+      },
+      {
+        "type": "text",
+        "id": "mega_feature_eyebrow",
+        "label": "Mega featured eyebrow"
+      },
+      {
+        "type": "text",
+        "id": "mega_feature_title",
+        "label": "Mega featured title"
+      },
+      {
+        "type": "text",
+        "id": "mega_feature_text",
+        "label": "Mega featured short line"
+      },
+      {
+        "type": "text",
+        "id": "mega_feature_url",
+        "label": "Mega featured link URL"
+      },
+      {
+        "type": "text",
+        "id": "mega_feature_image",
+        "label": "Mega featured image path (theme asset)"
+      },
+      {
+        "type": "text",
+        "id": "search_placeholder",
+        "label": "Search placeholder"
+      },
+      {
+        "type": "paragraph",
+        "content": "Account utilities (right side of header): Partner Portal, Join Co-op, Orders. Site chrome is edited here in Theme Editor — BigCommerce Page Builder cannot place widgets in the site header. Clear a label to hide that control."
+      },
+      {
+        "type": "text",
+        "id": "util_login_label",
+        "label": "Partner Portal label"
+      },
+      {
+        "type": "text",
+        "id": "util_login_url",
+        "label": "Partner Portal URL (empty = platform login)"
+      },
+      {
+        "type": "text",
+        "id": "util_login_icon",
+        "label": "Partner Portal icon path (e.g. img/icons/util-login.svg)"
+      },
+      {
+        "type": "text",
+        "id": "util_account_label",
+        "label": "Account label (when signed in)"
+      },
+      {
+        "type": "text",
+        "id": "util_account_icon",
+        "label": "Account icon path (empty = use Partner Portal icon)"
+      },
+      {
+        "type": "text",
+        "id": "util_join_label",
+        "label": "Join Co-op label"
+      },
+      {
+        "type": "text",
+        "id": "util_join_url",
+        "label": "Join Co-op URL (empty = create account)"
+      },
+      {
+        "type": "text",
+        "id": "util_join_icon",
+        "label": "Join icon path (optional — leave empty for text-only button)"
+      },
+      {
+        "type": "text",
+        "id": "util_cart_label",
+        "label": "Orders label"
+      },
+      {
+        "type": "text",
+        "id": "util_cart_url",
+        "label": "Orders URL (empty = platform cart)"
+      },
+      {
+        "type": "text",
+        "id": "util_cart_icon",
+        "label": "Orders icon path (e.g. img/icons/util-cart.svg)"
+      },
+      {
+        "type": "checkbox",
+        "id": "sticky_header",
+        "label": "Sticky header (header + category pills stay visible while scrolling)"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_scroll_reveal",
+        "label": "Homepage scroll reveal (subtle fade/rise as sections enter view)"
+      }
+    ]
+  },
+  {
+    "name": "Category pills (legacy fallback links)",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Header pills load all visible catalog categories (synced on theme push). These 8 fields remain for Shop-by-Category circles and other Theme Editor links — they no longer limit the header pill row."
+      },
+      {
+        "type": "text",
+        "id": "pill_1_label",
+        "label": "Pill 1 label (active)"
+      },
+      {
+        "type": "text",
+        "id": "pill_1_url",
+        "label": "Pill 1 URL"
+      },
+      {
+        "type": "text",
+        "id": "pill_2_label",
+        "label": "Pill 2 label"
+      },
+      {
+        "type": "text",
+        "id": "pill_2_url",
+        "label": "Pill 2 URL"
+      },
+      {
+        "type": "text",
+        "id": "pill_3_label",
+        "label": "Pill 3 label"
+      },
+      {
+        "type": "text",
+        "id": "pill_3_url",
+        "label": "Pill 3 URL"
+      },
+      {
+        "type": "text",
+        "id": "pill_4_label",
+        "label": "Pill 4 label"
+      },
+      {
+        "type": "text",
+        "id": "pill_4_url",
+        "label": "Pill 4 URL"
+      },
+      {
+        "type": "text",
+        "id": "pill_5_label",
+        "label": "Pill 5 label"
+      },
+      {
+        "type": "text",
+        "id": "pill_5_url",
+        "label": "Pill 5 URL"
+      },
+      {
+        "type": "text",
+        "id": "pill_6_label",
+        "label": "Pill 6 label"
+      },
+      {
+        "type": "text",
+        "id": "pill_6_url",
+        "label": "Pill 6 URL"
+      },
+      {
+        "type": "text",
+        "id": "pill_7_label",
+        "label": "Pill 7 label"
+      },
+      {
+        "type": "text",
+        "id": "pill_7_url",
+        "label": "Pill 7 URL"
+      },
+      {
+        "type": "text",
+        "id": "pill_8_label",
+        "label": "Pill 8 label"
+      },
+      {
+        "type": "text",
+        "id": "pill_8_url",
+        "label": "Pill 8 URL"
+      }
+    ]
+  },
+  {
+    "name": "Homepage — deals carousel",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_deal_carousel",
+        "label": "Show deal carousel"
+      },
+      {
+        "type": "text",
+        "id": "deal_1_image",
+        "label": "Deal 1 image path"
+      },
+      {
+        "type": "text",
+        "id": "deal_1_save",
+        "label": "Deal 1 save amount"
+      },
+      {
+        "type": "text",
+        "id": "deal_1_text",
+        "label": "Deal 1 text"
+      },
+      {
+        "type": "text",
+        "id": "deal_1_url",
+        "label": "Deal 1 URL"
+      },
+      {
+        "type": "text",
+        "id": "deal_2_image",
+        "label": "Deal 2 image path"
+      },
+      {
+        "type": "text",
+        "id": "deal_2_save",
+        "label": "Deal 2 save amount"
+      },
+      {
+        "type": "text",
+        "id": "deal_2_text",
+        "label": "Deal 2 text"
+      },
+      {
+        "type": "text",
+        "id": "deal_2_url",
+        "label": "Deal 2 URL"
+      },
+      {
+        "type": "text",
+        "id": "deal_3_image",
+        "label": "Deal 3 image path"
+      },
+      {
+        "type": "text",
+        "id": "deal_3_save",
+        "label": "Deal 3 save amount"
+      },
+      {
+        "type": "text",
+        "id": "deal_3_text",
+        "label": "Deal 3 text"
+      },
+      {
+        "type": "text",
+        "id": "deal_3_url",
+        "label": "Deal 3 URL"
+      },
+      {
+        "type": "text",
+        "id": "deal_4_image",
+        "label": "Deal 4 image path"
+      },
+      {
+        "type": "text",
+        "id": "deal_4_save",
+        "label": "Deal 4 save amount"
+      },
+      {
+        "type": "text",
+        "id": "deal_4_text",
+        "label": "Deal 4 text"
+      },
+      {
+        "type": "text",
+        "id": "deal_4_url",
+        "label": "Deal 4 URL"
+      }
+    ]
+  },
+  {
+    "name": "Homepage — categories & value",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_category_entry",
+        "label": "Show Buy by Category"
+      },
+      {
+        "type": "text",
+        "id": "category_entry_heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "cat_2_image",
+        "label": "Circle 2 image (Network)"
+      },
+      {
+        "type": "text",
+        "id": "cat_3_image",
+        "label": "Circle 3 image (Displays)"
+      },
+      {
+        "type": "text",
+        "id": "cat_4_image",
+        "label": "Circle 4 image (Cameras/Security)"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_value_bar",
+        "label": "Show value bar"
+      },
+      {
+        "type": "text",
+        "id": "value_1_title",
+        "label": "Value 1 title"
+      },
+      {
+        "type": "text",
+        "id": "value_1_text",
+        "label": "Value 1 text"
+      },
+      {
+        "type": "text",
+        "id": "value_2_title",
+        "label": "Value 2 title"
+      },
+      {
+        "type": "text",
+        "id": "value_2_text",
+        "label": "Value 2 text"
+      },
+      {
+        "type": "text",
+        "id": "value_3_title",
+        "label": "Value 3 title"
+      },
+      {
+        "type": "text",
+        "id": "value_3_text",
+        "label": "Value 3 text"
+      }
+    ]
+  },
+  {
+    "name": "Homepage — member & featured deals",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_member_band",
+        "label": "Show member banner"
+      },
+      {
+        "type": "text",
+        "id": "member_heading",
+        "label": "Member heading"
+      },
+      {
+        "type": "text",
+        "id": "member_text",
+        "label": "Member text"
+      },
+      {
+        "type": "text",
+        "id": "member_image",
+        "label": "Member image path"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_featured_deals",
+        "label": "Show featured deals"
+      },
+      {
+        "type": "text",
+        "id": "fdeal_1_image",
+        "label": "FDeal 1 image"
+      },
+      {
+        "type": "text",
+        "id": "fdeal_1_save",
+        "label": "FDeal 1 save"
+      },
+      {
+        "type": "text",
+        "id": "fdeal_1_url",
+        "label": "FDeal 1 URL"
+      },
+      {
+        "type": "text",
+        "id": "fdeal_2_image",
+        "label": "FDeal 2 image"
+      },
+      {
+        "type": "text",
+        "id": "fdeal_2_save",
+        "label": "FDeal 2 save"
+      },
+      {
+        "type": "text",
+        "id": "fdeal_2_url",
+        "label": "FDeal 2 URL"
+      },
+      {
+        "type": "text",
+        "id": "fdeal_3_image",
+        "label": "FDeal 3 image"
+      },
+      {
+        "type": "text",
+        "id": "fdeal_3_save",
+        "label": "FDeal 3 save"
+      },
+      {
+        "type": "text",
+        "id": "fdeal_3_url",
+        "label": "FDeal 3 URL"
+      },
+      {
+        "type": "text",
+        "id": "fdeal_4_image",
+        "label": "FDeal 4 image"
+      },
+      {
+        "type": "text",
+        "id": "fdeal_4_save",
+        "label": "FDeal 4 save"
+      },
+      {
+        "type": "text",
+        "id": "fdeal_4_url",
+        "label": "FDeal 4 URL"
+      }
+    ]
+  },
+  {
+    "name": "Homepage — products & lower",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_featured_products",
+        "label": "Show featured products"
+      },
+      {
+        "type": "text",
+        "id": "featured_heading",
+        "label": "Featured heading"
+      },
+      {
+        "type": "select",
+        "id": "homepage_featured_products_count",
+        "label": "Featured count",
+        "options": [
+          {
+            "value": 4,
+            "label": "4"
+          },
+          {
+            "value": 8,
+            "label": "8"
+          },
+          {
+            "value": 12,
+            "label": "12"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "homepage_new_products_count",
+        "label": "New count",
+        "options": [
+          {
+            "value": 0,
+            "label": "0"
+          },
+          {
+            "value": 4,
+            "label": "4"
+          },
+          {
+            "value": 8,
+            "label": "8"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "homepage_top_products_count",
+        "label": "Top count",
+        "options": [
+          {
+            "value": 0,
+            "label": "0"
+          },
+          {
+            "value": 4,
+            "label": "4"
+          },
+          {
+            "value": 8,
+            "label": "8"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "show_ways_to_shop",
+        "label": "Show ways to buy"
+      },
+      {
+        "type": "text",
+        "id": "ways_heading",
+        "label": "Ways heading"
+      },
+      {
+        "type": "text",
+        "id": "ways_text",
+        "label": "Ways text"
+      },
+      {
+        "type": "text",
+        "id": "way_1_title",
+        "label": "Way 1 title"
+      },
+      {
+        "type": "text",
+        "id": "way_1_text",
+        "label": "Way 1 text"
+      },
+      {
+        "type": "text",
+        "id": "way_2_title",
+        "label": "Way 2 title"
+      },
+      {
+        "type": "text",
+        "id": "way_2_text",
+        "label": "Way 2 text"
+      },
+      {
+        "type": "text",
+        "id": "way_3_title",
+        "label": "Way 3 title"
+      },
+      {
+        "type": "text",
+        "id": "way_3_text",
+        "label": "Way 3 text"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_assurance",
+        "label": "Show assurance strip"
+      },
+      {
+        "type": "text",
+        "id": "assurance_title",
+        "label": "Assurance title"
+      },
+      {
+        "type": "text",
+        "id": "assurance_text",
+        "label": "Assurance text"
+      },
+      {
+        "type": "text",
+        "id": "assurance_cta_label",
+        "label": "Assurance CTA"
+      },
+      {
+        "type": "text",
+        "id": "assurance_cta_url",
+        "label": "Assurance URL"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Footer columns are Theme Editor only (site chrome). Clear a column heading to hide that column. Column 1 can optionally list live catalog categories instead of fixed links."
+      },
+      {
+        "type": "text",
+        "id": "footer_tagline",
+        "label": "Footer tagline (unused when empty)"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_show_categories",
+        "label": "Column 1: list live catalog categories (ignores column 1 link fields)"
+      },
+      {
+        "type": "text",
+        "id": "footer_col1_heading",
+        "label": "Column 1 heading"
+      },
+      {
+        "type": "text",
+        "id": "footer_col1_l1_label",
+        "label": "Column 1 link 1 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col1_l1_url",
+        "label": "Column 1 link 1 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_col1_l2_label",
+        "label": "Column 1 link 2 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col1_l2_url",
+        "label": "Column 1 link 2 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_col1_l3_label",
+        "label": "Column 1 link 3 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col1_l3_url",
+        "label": "Column 1 link 3 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_col1_l4_label",
+        "label": "Column 1 link 4 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col1_l4_url",
+        "label": "Column 1 link 4 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_col2_heading",
+        "label": "Column 2 heading"
+      },
+      {
+        "type": "text",
+        "id": "footer_col2_l1_label",
+        "label": "Column 2 link 1 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col2_l1_url",
+        "label": "Column 2 link 1 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_col2_l2_label",
+        "label": "Column 2 link 2 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col2_l2_url",
+        "label": "Column 2 link 2 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_col2_l3_label",
+        "label": "Column 2 link 3 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col2_l3_url",
+        "label": "Column 2 link 3 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_col2_l4_label",
+        "label": "Column 2 link 4 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col2_l4_url",
+        "label": "Column 2 link 4 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_col3_heading",
+        "label": "Column 3 heading"
+      },
+      {
+        "type": "text",
+        "id": "footer_col3_l1_label",
+        "label": "Column 3 link 1 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col3_l1_url",
+        "label": "Column 3 link 1 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_col3_l2_label",
+        "label": "Column 3 link 2 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col3_l2_url",
+        "label": "Column 3 link 2 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_col3_l3_label",
+        "label": "Column 3 link 3 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col3_l3_url",
+        "label": "Column 3 link 3 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_col3_l4_label",
+        "label": "Column 3 link 4 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col3_l4_url",
+        "label": "Column 3 link 4 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_col4_heading",
+        "label": "Column 4 heading"
+      },
+      {
+        "type": "text",
+        "id": "footer_col4_l1_label",
+        "label": "Column 4 link 1 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col4_l1_url",
+        "label": "Column 4 link 1 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_col4_l2_label",
+        "label": "Column 4 link 2 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col4_l2_url",
+        "label": "Column 4 link 2 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_col4_l3_label",
+        "label": "Column 4 link 3 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col4_l3_url",
+        "label": "Column 4 link 3 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_col4_l4_label",
+        "label": "Column 4 link 4 label"
+      },
+      {
+        "type": "text",
+        "id": "footer_col4_l4_url",
+        "label": "Column 4 link 4 URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_legal",
+        "label": "Copyright / legal line"
+      },
+      {
+        "type": "text",
+        "id": "footer_address_1",
+        "label": "Address line 1"
+      },
+      {
+        "type": "text",
+        "id": "footer_address_2",
+        "label": "Address line 2"
+      },
+      {
+        "type": "text",
+        "id": "footer_address_3",
+        "label": "Address line 3"
+      },
+      {
+        "type": "text",
+        "id": "sale_badge_label",
+        "label": "Product sale badge label (empty = hide badge)"
+      }
+    ]
+  },
+  {
+    "name": "Back to top",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Fixed storefront control (not a chat widget). Appears after the visitor scrolls down; returns them to the top of the page."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_back_to_top",
+        "label": "Show Back to top"
+      },
+      {
+        "type": "text",
+        "id": "back_to_top_label",
+        "label": "Back to top label (also used for accessible name)"
+      },
+      {
+        "type": "checkbox",
+        "id": "back_to_top_show_label",
+        "label": "Show label text (off = icon only)"
+      },
+      {
+        "type": "select",
+        "id": "back_to_top_threshold",
+        "label": "Show after scrolling",
+        "options": [
+          {
+            "value": "300",
+            "label": "300px"
+          },
+          {
+            "value": "480",
+            "label": "480px"
+          },
+          {
+            "value": "720",
+            "label": "720px"
+          },
+          {
+            "value": "960",
+            "label": "960px"
+          }
+        ]
+      }
+    ]
+  }
+]
