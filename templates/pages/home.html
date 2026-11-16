@@ -1,0 +1,53 @@
+---
+products:
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+---
+{{#partial "body_class"}} tac-page--home{{/partial}}
+{{#partial "page"}}
+{{! Single homepage body region — all merchandising widgets live here and can be added / reordered / hidden in Page Builder. }}
+<div class="tac-home"{{#if theme_settings.enable_scroll_reveal}} data-tac-scroll-reveal{{/if}}>
+    <div class="tac-home-notes">
+        <a class="tac-first-time-banner" href="/first-time-here/">
+            <span class="tac-first-time-banner__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M12 3v2.2"></path>
+                    <path d="M12 18.8V21"></path>
+                    <path d="M3 12h2.2"></path>
+                    <path d="M18.8 12H21"></path>
+                    <path d="m12 8 2.6 2.6L12 16.5 9.4 10.6Z"></path>
+                </svg>
+            </span>
+            <span class="tac-first-time-banner__body">
+                <span class="tac-first-time-banner__copy">
+                    <span class="tac-first-time-banner__title">First time here?</span>
+                    <span class="tac-first-time-banner__sub">See how the TAC-USA Co-op works.</span>
+                </span>
+                <span class="tac-first-time-banner__cta">Start here →</span>
+            </span>
+        </a>
+        <a class="tac-ceo-note" href="/a-letter-from-our-ceo/">
+            <span class="tac-ceo-note__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+                    <rect x="3.5" y="5.5" width="17" height="13" rx="1.5"></rect>
+                    <path d="M4.5 7.5 12 13l7.5-5.5"></path>
+                </svg>
+            </span>
+            <span class="tac-ceo-note__body">
+                <span class="tac-ceo-note__copy">
+                    <span class="tac-ceo-note__title">A Letter from Our CEO</span>
+                    <span class="tac-ceo-note__sub">Why the Cooperative exists.</span>
+                </span>
+                <span class="tac-ceo-note__cta">Read the letter →</span>
+            </span>
+        </a>
+    </div>
+    {{{region name="pb_home"}}}
+</div>
+{{/partial}}
+{{> layout/base}}

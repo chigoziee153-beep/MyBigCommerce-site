@@ -1,0 +1,14 @@
+{{#partial "body_class"}}{{#if settings.account_creation_enabled}} tac-join-enabled{{/if}}{{/partial}}
+{{#partial "page"}}
+<script type="application/json" id="tac-page-data">
+{
+  "error": {{#if forms.login.error}}{{{json forms.login.error}}}{{else}}""{{/if}},
+  "success": {{#if forms.login.success}}{{{json forms.login.success}}}{{else}}""{{/if}},
+  "loginAction": {{#if urls.auth.check_login}}{{{json urls.auth.check_login}}}{{else}}""{{/if}},
+  "forgotUrl": {{#if urls.auth.forgot_password}}{{{json urls.auth.forgot_password}}}{{else}}""{{/if}},
+  "joinUrl": {{#if theme_settings.util_join_url}}{{{json theme_settings.util_join_url}}}{{else}}{{{json urls.auth.create_account}}}{{/if}}
+}
+</script>
+{{{region name="pb_login"}}}
+{{/partial}}
+{{> layout/base}}

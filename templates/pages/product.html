@@ -1,0 +1,42 @@
+{{#partial "page"}}
+<template id="tac-live-product-media">
+  {{#if product.main_image}}
+  <img src="{{getImage product.main_image 'product_size'}}" alt="{{#if product.main_image.alt}}{{product.main_image.alt}}{{else}}{{product.title}}{{/if}}" itemprop="image">
+  {{/if}}
+</template>
+<template id="tac-live-product-heading">
+  <h1 itemprop="name">{{product.title}}</h1>
+  <p class="tac-pdp__price">
+    {{#if product.price.with_tax}}{{product.price.with_tax.formatted}}{{else}}{{product.price.without_tax.formatted}}{{/if}}
+  </p>
+  {{#if product.sku}}<p class="tac-pdp__sku">SKU: {{product.sku}}</p>{{/if}}
+</template>
+<template id="tac-live-product-form">
+  <form class="tac-pdp__form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data">
+    <input type="hidden" name="action" value="add">
+    <input type="hidden" name="product_id" value="{{product.id}}">
+    <label class="u-sr-only" for="qty_{{product.id}}" data-tac-slot="qty">Quantity</label>
+    <input id="qty_{{product.id}}" name="qty[]" type="number" value="1" min="1">
+    <div class="tac-pdp__actions">
+      <input type="submit" value="Add to cart" class="tac-btn tac-btn--solid" data-tac-slot="add">
+      <a class="tac-btn tac-btn--outline" href="/contact-us/" data-tac-slot="ask">Ask about this product</a>
+    </div>
+  </form>
+</template>
+<template id="tac-live-product-description">
+  {{#if product.description}}
+  <div class="tac-pdp__desc" itemprop="description">{{{product.description}}}</div>
+  {{/if}}
+</template>
+<template id="tac-live-related">
+  {{#if product.related_products}}
+  <div class="tac-product-grid">
+    {{#each product.related_products}}
+      {{> components/products/card}}
+    {{/each}}
+  </div>
+  {{/if}}
+</template>
+{{{region name="pb_product"}}}
+{{/partial}}
+{{> layout/base}}

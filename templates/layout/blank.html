@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{locale_name}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>{{#if page_title}}{{page_title}}{{else}}TAC-USA{{/if}}</title>
+    {{{head.meta_tags}}}
+    {{{head.config}}}
+    {{#block "head"}}{{/block}}
+</head>
+<body class="tac-blank-page{{#block "body_class"}}{{/block}}">
+    {{#block "page"}}{{/block}}
+    {{{footer.scripts}}}
+</body>
+</html>

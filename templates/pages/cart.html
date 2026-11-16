@@ -1,0 +1,38 @@
+{{#partial "body_class"}}{{#if cart.items}} tac-has-cart{{/if}}{{/partial}}
+{{#partial "page"}}
+<script type="application/json" id="tac-page-data">
+{
+  "quantity": {{#if cart.quantity}}{{cart.quantity}}{{else}}0{{/if}},
+  "checkoutUrl": {{#if urls.checkout.single_address}}{{{json urls.checkout.single_address}}}{{else}}""{{/if}},
+  "homeUrl": {{#if urls.home}}{{{json urls.home}}}{{else}}""{{/if}},
+  "shopUrl": {{#if theme_settings.nav_shop_url}}{{{json theme_settings.nav_shop_url}}}{{else}}{{{json urls.home}}}{{/if}}
+}
+</script>
+<template id="tac-live-cart-lines">
+  {{#if cart.items}}
+  <ul class="tac-cart__list">
+    {{#each cart.items}}
+    <li class="tac-cart__item">
+      <div class="tac-cart__meta">
+        <a class="tac-cart__name" href="{{url}}">{{name}}</a>
+        {{#if sku}}<p class="tac-cart__sku">SKU {{sku}}</p>{{/if}}
+        <p class="tac-cart__qty">Qty {{quantity}}</p>
+      </div>
+      <p class="tac-cart__price">
+        {{#if price.with_tax}}{{price.with_tax.formatted}}{{else if price.without_tax}}{{price.without_tax.formatted}}{{/if}}
+      </p>
+    </li>
+    {{/each}}
+  </ul>
+  {{/if}}
+</template>
+<template id="tac-live-cart-total">
+  {{#if cart.grand_total}}
+  <p class="tac-cart__total"><strong>Total</strong> {{cart.grand_total.formatted}}</p>
+  {{else if cart.sub_total}}
+  <p class="tac-cart__total"><strong>Subtotal</strong> {{cart.sub_total.formatted}}</p>
+  {{/if}}
+</template>
+{{{region name="pb_cart"}}}
+{{/partial}}
+{{> layout/base}}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="{{locale_name}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{#if page_title}}{{page_title}} - {{/if}}TAC-USA</title>
+    {{{head.meta_tags}}}
+    {{{head.config}}}
+    {{#block "head"}}{{/block}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    {{{stylesheet 'assets/css/theme.css'}}}
+    {{{head.scripts}}}
+    {{! Neutralize leftover Workgrid Script Manager / head injection (beige paper + brown headings). }}
+    <script>
+    (function () {
+      function stripWorkgrid() {
+        var boot = document.getElementById("workgrid-boot");
+        if (boot) boot.remove();
+        var css = document.getElementById("workgrid-css");
+        if (css) css.remove();
+        var gf = document.getElementById("workgrid-gridfix");
+        if (gf) gf.remove();
+        document.querySelectorAll('link[href*="Plus+Jakarta+Sans"]').forEach(function (el) {
+          el.remove();
+        });
+      }
+      stripWorkgrid();
+      if (document.documentElement) {
+        var mo = new MutationObserver(stripWorkgrid);
+        mo.observe(document.documentElement, { childList: true, subtree: true });
+        setTimeout(function () { mo.disconnect(); stripWorkgrid(); }, 4000);
+      }
+    })();
+    </script>
+</head>
+<body class="tac-body{{#block "body_class"}}{{/block}}">
+    {{> components/common/header}}
+    {{> components/common/category-data}}
+    <main class="tac-main" id="main-content">
+        {{#block "page"}}{{/block}}
+    </main>
+    {{> components/common/footer}}
+    {{> components/common/back-to-top}}
+    <script>
+    window.__TAC_SF__ = {
+      token: "{{settings.storefront_api.token}}",
+      saleBadge: "{{theme_settings.sale_badge_label}}"
+    };
+    </script>
+    <script src="{{cdn 'assets/js/pb-pages.js'}}"></script>
+    <script src="{{cdn 'assets/js/theme.js'}}"></script>
+    {{#block "foot"}}{{/block}}
+    {{{footer.scripts}}}
+</body>
+</html>

@@ -1,0 +1,20 @@
+{{#partial "page"}}
+{{> components/common/tac-brand-catalog}}
+<template id="tac-live-brands-list">
+  {{#if brands}}
+  <div class="tac-brand-directory" data-tac-brand-directory>
+    <div class="tac-brand-directory__stage">
+      <button type="button" class="tac-rail-btn tac-brand-directory__arrow tac-brand-directory__arrow--prev" data-tac-brand-prev aria-label="Previous brands">‹</button>
+      <div class="tac-brand-directory__viewport" data-tac-brand-viewport>
+        <div class="tac-brand-directory__track" data-tac-brand-track tabindex="0"></div>
+      </div>
+      <button type="button" class="tac-rail-btn tac-brand-directory__arrow tac-brand-directory__arrow--next" data-tac-brand-next aria-label="Next brands">›</button>
+    </div>
+    <nav class="tac-brand-az" data-tac-brand-az aria-label="Brands by letter"></nav>
+    <p class="tac-brand-directory__status" data-tac-brand-status aria-live="polite"></p>
+  </div>
+  {{/if}}
+</template>
+{{{region name="pb_brands"}}}
+{{/partial}}
+{{> layout/base}}

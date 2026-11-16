@@ -1,0 +1,11 @@
+{{#partial "page"}}
+<template id="tac-live-compare">
+  {{#if comparisons}}
+  <div class="tac-product-grid">
+    {{#each comparisons}}{{> components/products/card}}{{/each}}
+  </div>
+  {{/if}}
+</template>
+{{{region name="pb_compare"}}}
+{{/partial}}
+{{> layout/base}}

@@ -1,0 +1,187 @@
+<div
+    class="tac-chrome{{#if theme_settings.sticky_header}} tac-chrome--sticky{{/if}}"
+    data-tac-chrome
+    {{#if theme_settings.sticky_header}}data-tac-chrome-sticky="true"{{/if}}
+>
+    <header class="tac-header">
+        <div class="tac-header__inner">
+            <a class="tac-brand" href="{{urls.home}}">
+                {{#if theme_settings.brand_logo}}
+                <img class="tac-brand__logo" src="{{cdn theme_settings.brand_logo}}" alt="{{theme_settings.brand_name}}{{#if theme_settings.brand_subtitle}} — {{theme_settings.brand_subtitle}}{{/if}}" width="272" height="97">
+                {{else}}
+                <span class="tac-brand__mark">{{theme_settings.brand_name}}</span>
+                {{#if theme_settings.brand_subtitle}}
+                <span class="tac-brand__sub">{{theme_settings.brand_subtitle}}</span>
+                {{/if}}
+                {{/if}}
+            </a>
+            {{#if theme_settings.support_label}}
+            <a class="tac-support" href="{{theme_settings.support_url}}">{{theme_settings.support_label}}</a>
+            {{/if}}
+            <nav class="tac-icon-nav" aria-label="Primary">
+                {{#if theme_settings.nav_shop_label}}
+                <div class="tac-mega" data-tac-mega>
+                    <button
+                        type="button"
+                        class="tac-icon-nav__item tac-mega__toggle"
+                        id="tac-mega-shop-btn"
+                        aria-expanded="false"
+                        aria-controls="tac-mega-shop-panel"
+                        data-tac-mega-toggle
+                    >
+                        {{#if theme_settings.nav_shop_icon}}
+                        <span class="tac-icon-nav__glyph" aria-hidden="true">
+                            <img class="tac-icon-nav__img" src="{{cdn theme_settings.nav_shop_icon}}" alt="" width="22" height="22">
+                        </span>
+                        {{/if}}
+                        <span>{{theme_settings.nav_shop_label}}</span>
+                    </button>
+                    <div
+                        class="tac-mega__panel"
+                        id="tac-mega-shop-panel"
+                        role="region"
+                        aria-labelledby="tac-mega-shop-btn"
+                        hidden
+                        data-tac-mega-panel
+                    >
+                        <div class="tac-mega__inner">
+                            <div class="tac-mega__cats">
+                                {{#if theme_settings.mega_cats_heading}}
+                                <p class="tac-mega__heading">{{theme_settings.mega_cats_heading}}</p>
+                                {{/if}}
+                                <ul class="tac-mega__list">
+                                    {{> components/common/category-mega-items}}
+                                </ul>
+                                {{#if theme_settings.mega_browse_label}}
+                                {{#if theme_settings.nav_shop_url}}
+                                <a class="tac-mega__all" href="{{theme_settings.nav_shop_url}}">{{theme_settings.mega_browse_label}}</a>
+                                {{/if}}
+                                {{/if}}
+                            </div>
+                            <aside class="tac-mega__feature">
+                                {{#if theme_settings.mega_feature_url}}
+                                <a class="tac-mega__feature-card" href="{{theme_settings.mega_feature_url}}">
+                                    {{#if theme_settings.mega_feature_image}}
+                                    <img class="tac-mega__feature-img" src="{{cdn theme_settings.mega_feature_image}}" alt="" width="320" height="200">
+                                    {{else}}
+                                    <span class="tac-mega__feature-ph" aria-hidden="true"></span>
+                                    {{/if}}
+                                    <span class="tac-mega__feature-copy">
+                                        {{#if theme_settings.mega_feature_eyebrow}}<span class="tac-mega__feature-eyebrow">{{theme_settings.mega_feature_eyebrow}}</span>{{/if}}
+                                        {{#if theme_settings.mega_feature_title}}<span class="tac-mega__feature-title">{{theme_settings.mega_feature_title}}</span>{{/if}}
+                                        {{#if theme_settings.mega_feature_text}}<span class="tac-mega__feature-text">{{theme_settings.mega_feature_text}}</span>{{/if}}
+                                    </span>
+                                </a>
+                                {{else}}
+                                <div class="tac-mega__feature-card tac-mega__feature-card--static">
+                                    {{#if theme_settings.mega_feature_image}}
+                                    <img class="tac-mega__feature-img" src="{{cdn theme_settings.mega_feature_image}}" alt="" width="320" height="200">
+                                    {{else}}
+                                    <span class="tac-mega__feature-ph" aria-hidden="true"></span>
+                                    {{/if}}
+                                    <span class="tac-mega__feature-copy">
+                                        {{#if theme_settings.mega_feature_eyebrow}}<span class="tac-mega__feature-eyebrow">{{theme_settings.mega_feature_eyebrow}}</span>{{/if}}
+                                        {{#if theme_settings.mega_feature_title}}<span class="tac-mega__feature-title">{{theme_settings.mega_feature_title}}</span>{{/if}}
+                                        {{#if theme_settings.mega_feature_text}}<span class="tac-mega__feature-text">{{theme_settings.mega_feature_text}}</span>{{/if}}
+                                    </span>
+                                </div>
+                                {{/if}}
+                                {{#if theme_settings.mega_feature_hint}}
+                                <p class="tac-mega__feature-hint">{{theme_settings.mega_feature_hint}}</p>
+                                {{/if}}
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+                {{#if theme_settings.nav_services_label}}
+                <a class="tac-icon-nav__item" href="{{theme_settings.nav_services_url}}">
+                    {{#if theme_settings.nav_services_icon}}
+                    <span class="tac-icon-nav__glyph" aria-hidden="true">
+                        <img class="tac-icon-nav__img" src="{{cdn theme_settings.nav_services_icon}}" alt="" width="22" height="22">
+                    </span>
+                    {{/if}}
+                    <span>{{theme_settings.nav_services_label}}</span>
+                </a>
+                {{/if}}
+                {{#if theme_settings.nav_learn_label}}
+                <a class="tac-icon-nav__item" href="{{theme_settings.nav_learn_url}}">
+                    {{#if theme_settings.nav_learn_icon}}
+                    <span class="tac-icon-nav__glyph" aria-hidden="true">
+                        <img class="tac-icon-nav__img" src="{{cdn theme_settings.nav_learn_icon}}" alt="" width="22" height="22">
+                    </span>
+                    {{/if}}
+                    <span>{{theme_settings.nav_learn_label}}</span>
+                </a>
+                {{/if}}
+                {{#if theme_settings.nav_deals_label}}
+                <a class="tac-icon-nav__item" href="{{theme_settings.nav_deals_url}}">
+                    {{#if theme_settings.nav_deals_icon}}
+                    <span class="tac-icon-nav__glyph" aria-hidden="true">
+                        <img class="tac-icon-nav__img" src="{{cdn theme_settings.nav_deals_icon}}" alt="" width="22" height="22">
+                    </span>
+                    {{/if}}
+                    <span>{{theme_settings.nav_deals_label}}</span>
+                </a>
+                {{/if}}
+            </nav>
+            <form class="tac-search" action="{{urls.search}}" method="get" role="search">
+                <label class="u-sr-only" for="tac-search-q">Search</label>
+                <input id="tac-search-q" type="search" name="search_query" placeholder="{{theme_settings.search_placeholder}}">
+                <button type="submit" aria-label="Search">⌕</button>
+            </form>
+            <div class="tac-utils">
+                {{#if customer}}
+                {{#if theme_settings.util_account_label}}
+                <a class="tac-utils__account" href="{{urls.account.index}}" title="{{theme_settings.util_account_label}}">
+                    {{#if theme_settings.util_account_icon}}
+                    <span class="tac-utils__glyph" aria-hidden="true">
+                        <img class="tac-utils__img" src="{{cdn theme_settings.util_account_icon}}" alt="" width="22" height="22">
+                    </span>
+                    {{else}}
+                    {{#if theme_settings.util_login_icon}}
+                    <span class="tac-utils__glyph" aria-hidden="true">
+                        <img class="tac-utils__img" src="{{cdn theme_settings.util_login_icon}}" alt="" width="22" height="22">
+                    </span>
+                    {{/if}}
+                    {{/if}}
+                    <span>{{theme_settings.util_account_label}}</span>
+                </a>
+                {{/if}}
+                {{else}}
+                {{#if theme_settings.util_login_label}}
+                <a class="tac-utils__account" href="{{#if theme_settings.util_login_url}}{{theme_settings.util_login_url}}{{else}}{{urls.auth.login}}{{/if}}" title="{{theme_settings.util_login_label}}">
+                    {{#if theme_settings.util_login_icon}}
+                    <span class="tac-utils__glyph" aria-hidden="true">
+                        <img class="tac-utils__img" src="{{cdn theme_settings.util_login_icon}}" alt="" width="22" height="22">
+                    </span>
+                    {{/if}}
+                    <span>{{theme_settings.util_login_label}}</span>
+                </a>
+                {{/if}}
+                {{#if theme_settings.util_join_label}}
+                <a class="tac-utils__join" href="{{#if theme_settings.util_join_url}}{{theme_settings.util_join_url}}{{else}}{{urls.auth.create_account}}{{/if}}" title="{{theme_settings.util_join_label}}">
+                    {{#if theme_settings.util_join_icon}}
+                    <span class="tac-utils__glyph" aria-hidden="true">
+                        <img class="tac-utils__img" src="{{cdn theme_settings.util_join_icon}}" alt="" width="22" height="22">
+                    </span>
+                    {{/if}}
+                    <span>{{theme_settings.util_join_label}}</span>
+                </a>
+                {{/if}}
+                {{/if}}
+                {{#if theme_settings.util_cart_label}}
+                <a class="tac-utils__cart" href="{{#if theme_settings.util_cart_url}}{{theme_settings.util_cart_url}}{{else}}{{urls.cart}}{{/if}}" title="{{theme_settings.util_cart_label}}">
+                    {{#if theme_settings.util_cart_icon}}
+                    <span class="tac-utils__glyph" aria-hidden="true">
+                        <img class="tac-utils__img" src="{{cdn theme_settings.util_cart_icon}}" alt="" width="22" height="22">
+                    </span>
+                    {{/if}}
+                    <span>{{theme_settings.util_cart_label}}{{#if cart.items}} ({{cart.quantity}}){{/if}}</span>
+                </a>
+                {{/if}}
+            </div>
+        </div>
+    </header>
+    {{> components/common/pill-nav}}
+</div>

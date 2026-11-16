@@ -1,0 +1,44 @@
+<script type="application/json" id="tac-page-data">
+{
+  "signedIn": {{#if customer}}true{{else}}false{{/if}},
+  "loginUrl": {{#if urls.auth.login}}{{{json urls.auth.login}}}{{else}}""{{/if}},
+  "accountUrl": {{#if urls.account.index}}{{{json urls.account.index}}}{{else}}""{{/if}},
+  "ordersUrl": {{#if urls.account.orders.all}}{{{json urls.account.orders.all}}}{{else}}""{{/if}},
+  "addressesUrl": {{#if urls.account.addresses}}{{{json urls.account.addresses}}}{{else}}""{{/if}},
+  "inboxUrl": {{#if urls.account.inbox}}{{{json urls.account.inbox}}}{{else}}""{{/if}},
+  "wishlistsUrl": {{#if urls.account.wishlists.all}}{{{json urls.account.wishlists.all}}}{{else}}""{{/if}},
+  "logoutUrl": {{#if urls.auth.logout}}{{{json urls.auth.logout}}}{{else}}""{{/if}},
+  "updateUrl": {{#if urls.account.update_action}}{{{json urls.account.update_action}}}{{else}}""{{/if}},
+  "customerName": {{#if customer.name}}{{{json customer.name}}}{{else}}""{{/if}},
+  "customerEmail": {{#if customer.email}}{{{json customer.email}}}{{else}}""{{/if}}
+}
+</script>
+<template id="tac-live-account-error">
+  {{#if forms.edit_account.error}}<p class="tac-form__error" role="alert">{{{forms.edit_account.error}}}</p>{{/if}}
+</template>
+<template id="tac-live-account-success">
+  {{#if forms.edit_account.success}}<p class="tac-simple-page__success">{{forms.edit_account.success}}</p>{{/if}}
+</template>
+<template id="tac-live-account-fields">
+  {{#each forms.edit_account.account_fields}}
+    {{{dynamicComponent 'components/common/forms'}}}
+  {{/each}}
+</template>
+<template id="tac-live-orders">
+  {{#if customer.orders}}
+  <ul class="tac-account-list">
+    {{#each customer.orders}}
+    <li><a href="{{details_url}}">Order {{id}}</a> — {{status}}</li>
+    {{/each}}
+  </ul>
+  {{/if}}
+</template>
+<template id="tac-live-addresses">
+  {{#if customer.addresses}}
+  <ul class="tac-account-list">
+    {{#each customer.addresses}}
+    <li>{{#if first_name}}{{first_name}} {{last_name}} — {{/if}}{{address1}}{{#if city}}, {{city}}{{/if}}</li>
+    {{/each}}
+  </ul>
+  {{/if}}
+</template>

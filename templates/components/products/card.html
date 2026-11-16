@@ -1,0 +1,30 @@
+<article class="tac-product-card">
+    {{#if theme_settings.sale_badge_label}}
+    {{#if price.non_sale_price_without_tax}}
+        <span class="tac-product-card__badge">{{theme_settings.sale_badge_label}}</span>
+    {{else if price.sale_price_without_tax}}
+        <span class="tac-product-card__badge">{{theme_settings.sale_badge_label}}</span>
+    {{/if}}
+    {{/if}}
+    <button type="button" class="tac-product-card__wish" aria-label="Save {{name}} to wishlist" data-tac-wish>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.4l-1.4-1.3C5.4 14.1 2 11 2 7.5A4.4 4.4 0 016.4 3c1.7 0 3.3.9 4.2 2.2A5 5 0 0114.8 3 4.4 4.4 0 0119.2 7.5c0 3.5-3.4 6.6-8.6 11.6L12 20.4z"/></svg>
+    </button>
+    <a class="tac-product-card__link" href="{{url}}">
+        <div class="tac-product-card__art">
+            {{#if image}}
+                <img src="{{getImage image 'productgallery_size'}}" alt="{{#if image.alt}}{{image.alt}}{{else}}{{name}}{{/if}}" loading="lazy" width="300" height="300">
+            {{else}}
+                <span class="tac-product-card__missing">No image</span>
+            {{/if}}
+        </div>
+        <h3 class="tac-product-card__title">{{name}}</h3>
+        <p class="tac-product-card__price">
+            {{#if price.with_tax}}
+                {{price.with_tax.formatted}}
+            {{else if price.without_tax}}
+                {{price.without_tax.formatted}}
+            {{/if}}
+        </p>
+        <p class="tac-product-card__rating"><span class="tac-stars" aria-hidden="true">★★★★★</span>{{#if num_reviews}} ({{num_reviews}}){{/if}}</p>
+    </a>
+</article>

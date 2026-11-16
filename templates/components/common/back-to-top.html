@@ -1,0 +1,20 @@
+{{#if theme_settings.show_back_to_top}}
+<button
+    type="button"
+    class="tac-back-top{{#if theme_settings.back_to_top_show_label}} tac-back-top--labeled{{/if}}"
+    data-tac-back-top
+    data-tac-back-top-threshold="{{#if theme_settings.back_to_top_threshold}}{{theme_settings.back_to_top_threshold}}{{else}}480{{/if}}"
+    aria-label="{{#if theme_settings.back_to_top_label}}{{theme_settings.back_to_top_label}}{{else}}Back to top{{/if}}"
+    aria-hidden="true"
+    tabindex="-1"
+>
+    <span class="tac-back-top__icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <path d="M12 5.5L5.5 12M12 5.5L18.5 12M12 5.5V19.5" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </span>
+    {{#if theme_settings.back_to_top_show_label}}
+    <span class="tac-back-top__label">{{#if theme_settings.back_to_top_label}}{{theme_settings.back_to_top_label}}{{else}}Back to top{{/if}}</span>
+    {{/if}}
+</button>
+{{/if}}

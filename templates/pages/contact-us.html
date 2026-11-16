@@ -1,0 +1,16 @@
+{{#partial "body_class"}}{{#if forms.contact.success}} tac-contact-sent{{/if}}{{#unless forms.contact.success}}{{#unless page.content}} tac-contact-fallback{{/unless}}{{/unless}}{{/partial}}
+{{#partial "page"}}
+<template id="tac-live-contact-title">
+  <h1 id="tac-contact-heading">{{page.title}}</h1>
+</template>
+<template id="tac-live-contact-body">
+  {{#if page.content}}
+  <div class="tac-simple-page__content">{{{page.content}}}</div>
+  {{/if}}
+</template>
+<template id="tac-live-contact-form">
+  {{> components/page/contact-us-form}}
+</template>
+{{{region name="pb_contact"}}}
+{{/partial}}
+{{> layout/base}}

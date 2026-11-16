@@ -1,0 +1,11 @@
+{{#partial "page"}}
+<script type="application/json" id="tac-page-data">
+{
+  "customerEmail": {{#if customer.email}}{{{json customer.email}}}{{else}}""{{/if}},
+  "accountUrl": {{#if urls.account.index}}{{{json urls.account.index}}}{{else}}""{{/if}},
+  "homeUrl": {{#if urls.home}}{{{json urls.home}}}{{else}}""{{/if}}
+}
+</script>
+{{{region name="pb_account_created"}}}
+{{/partial}}
+{{> layout/base}}

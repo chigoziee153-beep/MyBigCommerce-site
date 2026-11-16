@@ -1,0 +1,250 @@
+{{!
+  Captured from live tac-usa.com (PROD) while store was under construction / prelaunch.
+  Keep this page intact so theme swaps do not lose the public maintenance experience.
+}}
+{{#partial "head"}}
+<style>
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: #eeedf5;
+}
+.tac-coming-soon,
+.tac-coming-soon * {
+  box-sizing: border-box;
+}
+.tac-coming-soon {
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  min-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 24px clamp(24px, 7vw, 110px) 28px;
+  color: #14121d;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.tac-coming-soon__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.tac-coming-soon__bg::before,
+.tac-coming-soon__bg::after {
+  content: "";
+  position: absolute;
+  width: 38vw;
+  min-width: 260px;
+  height: 160%;
+  top: -25%;
+  transform: rotate(28deg);
+  background: rgba(255, 255, 255, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.tac-coming-soon__bg::before { left: 28%; }
+.tac-coming-soon__bg::after {
+  left: 72%;
+  background: rgba(207, 204, 224, 0.3);
+}
+.tac-top {
+  width: 100%;
+  margin: 0 0 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.tac-letter-link {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #1a5cff;
+  font-size: clamp(1.05rem, 1.7vw + 0.55rem, 1.75rem);
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+  text-decoration-thickness: 0.08em;
+  white-space: nowrap;
+}
+.tac-letter-link:hover,
+.tac-letter-link:focus-visible { color: #0d3fbf; }
+.tac-letter-link:focus-visible {
+  outline: 3px solid #6650bd;
+  outline-offset: 5px;
+}
+.tac-brand {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-align: center;
+}
+.tac-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  padding: 32px 0;
+}
+.tac-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 28px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.tac-status::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #b5ff45;
+  border: 1px solid #678b2a;
+}
+.tac-title {
+  margin: 0 0 30px;
+  color: #14121d;
+  font-family: inherit;
+  font-size: clamp(48px, 8vw, 112px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+}
+.tac-title span {
+  background: linear-gradient(
+    transparent 61%,
+    #b5ff45 61%,
+    #b5ff45 94%,
+    transparent 94%
+  );
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.tac-description {
+  max-width: 760px;
+  margin: 0 0 32px;
+  font-size: 18px;
+  line-height: 1.65;
+  color: #494555;
+}
+.tac-contact {
+  display: inline-block;
+  padding: 17px 24px;
+  border: 2px solid #14121d;
+  border-radius: 6px;
+  background: #14121d;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background 150ms, color 150ms;
+}
+.tac-contact:hover {
+  background: #b5ff45;
+  color: #14121d;
+}
+.tac-contact:focus-visible {
+  outline: 3px solid #6650bd;
+  outline-offset: 5px;
+}
+.tac-coming-soon-footer {
+  flex-shrink: 0;
+  margin-top: 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(20, 18, 29, 0.15);
+  font-size: 13px;
+  color: #575160;
+  text-align: center;
+}
+.tac-coming-soon > header {
+  text-align: center;
+  flex-shrink: 0;
+}
+@media (max-width: 700px) {
+  .tac-coming-soon {
+    padding: 14px 20px 16px;
+    min-height: 100dvh;
+    overflow: hidden;
+  }
+  .tac-top { margin: 0 0 12px; }
+  .tac-letter-link {
+    white-space: normal;
+    font-size: clamp(1.1rem, 4.6vw, 1.35rem);
+    line-height: 1.3;
+  }
+  .tac-brand { font-size: 22px; }
+  .tac-content {
+    padding: 20px 0 12px;
+    justify-content: center;
+  }
+  .tac-status {
+    margin-bottom: 16px;
+    font-size: 11px;
+  }
+  .tac-title {
+    margin-bottom: 16px;
+    font-size: clamp(38px, 10vw, 58px);
+  }
+  .tac-description {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .tac-contact {
+    width: 100%;
+    max-width: 320px;
+    padding: 15px 18px;
+  }
+  .tac-coming-soon-footer {
+    padding-top: 14px;
+    font-size: 12px;
+  }
+}
+</style>
+{{/partial}}
+{{#partial "page"}}
+<main class="tac-coming-soon">
+  <div class="tac-coming-soon__bg" aria-hidden="true"></div>
+  <div class="tac-top">
+    <a
+      class="tac-letter-link"
+      href="https://world.hey.com/t.a.capone/new-and-improved-again-4263f6f3"
+      rel="noopener noreferrer"
+      target="_blank"
+    >Click here for a note from our CEO</a>
+  </div>
+  <header>
+    <p class="tac-brand">TAC-USA</p>
+  </header>
+  <section class="tac-content" aria-labelledby="tac-heading">
+    <p class="tac-status">Under Construction</p>
+    <h1 id="tac-heading" class="tac-title">
+      Something new.<br>
+      <span>Coming soon.</span>
+    </h1>
+    <p class="tac-description">
+      We're building our new online experience.
+      For inquiries, contact our team.
+    </p>
+    <a class="tac-contact" href="mailto:info@tac-usa.com">info@tac-usa.com</a>
+  </section>
+  <footer class="tac-coming-soon-footer">
+    TAC-USA.com &middot; Our new website is on its way.
+  </footer>
+</main>
+{{/partial}}
+{{> layout/blank}}

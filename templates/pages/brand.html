@@ -1,0 +1,21 @@
+{{#partial "page"}}
+<template id="tac-live-brand-banner">
+  <header class="tac-plp__header">
+    <h1>{{brand.name}}</h1>
+    {{#if brand.description}}
+    <div class="tac-plp__desc">{{{brand.description}}}</div>
+    {{/if}}
+  </header>
+</template>
+<template id="tac-live-brand-products">
+  {{#if brand.products}}
+  <div class="tac-product-grid">
+    {{#each brand.products}}
+      {{> components/products/card}}
+    {{/each}}
+  </div>
+  {{/if}}
+</template>
+{{{region name="pb_brand"}}}
+{{/partial}}
+{{> layout/base}}

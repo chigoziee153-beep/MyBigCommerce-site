@@ -1,0 +1,9 @@
+{{!-- Recursive pill for one catalog category + its visible children. --}}
+{{#if url}}
+<a class="tac-pill" href="{{url}}">{{name}}</a>
+{{/if}}
+{{#if children}}
+    {{#each children}}
+        {{> components/common/category-pill-node}}
+    {{/each}}
+{{/if}}

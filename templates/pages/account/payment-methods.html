@@ -1,0 +1,20 @@
+{{#partial "page"}}
+<section class="tac-simple-page" aria-labelledby="tac-account-heading">
+    <h1 id="tac-account-heading">Payment methods</h1>
+    <p class="tac-simple-page__lede">Stored payment methods for checkout.</p>
+    {{#unless customer}}
+    <p class="tac-simple-page__lede">Please <a href="{{urls.auth.login}}">Portal Login</a> to continue.</p>
+    {{else}}
+    <nav class="tac-account-nav" aria-label="Account">
+        <a href="{{urls.account.index}}">Overview</a>
+        <a href="{{urls.account.orders.all}}">Orders</a>
+        <a href="{{urls.account.addresses}}">Addresses</a>
+        <a href="{{urls.account.inbox}}">Messages</a>
+        <a href="{{urls.account.wishlists.all}}">Wishlists</a>
+        <a href="{{urls.auth.logout}}">Sign out</a>
+    </nav>
+    <p class="tac-simple-page__aside">Account tools for Cooperative members. Use the links above to move between sections.</p>
+    {{/unless}}
+</section>
+{{/partial}}
+{{> layout/base}}

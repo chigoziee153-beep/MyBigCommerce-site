@@ -1,0 +1,18 @@
+{{! Shared account page chrome — pass heading + optional lede via parent }}
+<section class="tac-simple-page" aria-labelledby="tac-account-heading">
+    {{{region name=region_above}}}
+    <h1 id="tac-account-heading">{{heading}}</h1>
+    {{#if lede}}<p class="tac-simple-page__lede">{{lede}}</p>{{/if}}
+    {{#unless customer}}
+    <p class="tac-simple-page__lede">Please <a href="{{urls.auth.login}}">Portal Login</a> to view this page.</p>
+    {{else}}
+    <nav class="tac-account-nav" aria-label="Account">
+        <a href="{{urls.account.index}}">Overview</a>
+        <a href="{{urls.account.orders.all}}">Orders</a>
+        <a href="{{urls.account.addresses}}">Addresses</a>
+        <a href="{{urls.account.inbox}}">Messages</a>
+        <a href="{{urls.account.wishlists.all}}">Wishlists</a>
+        <a href="{{urls.account.returns}}">Returns</a>
+        <a href="{{urls.auth.logout}}">Sign out</a>
+    </nav>
+    {{/unless}}

@@ -1,0 +1,54 @@
+<form class="tac-form tac-contact-form" action="{{urls.contact_us_submit}}" method="post">
+    {{#if forms.contact.error}}
+    <p class="tac-form__error" role="alert">{{forms.contact.error}}</p>
+    {{/if}}
+    <input type="hidden" name="page_id" value="{{forms.contact.page_id}}">
+    <div class="tac-form__grid">
+        {{#if forms.contact.name}}
+        <label class="tac-form__field">
+            <span>Full name</span>
+            <input type="text" name="contact_fullname" value="{{customer.name}}" autocomplete="name">
+        </label>
+        {{/if}}
+        {{#if forms.contact.phone}}
+        <label class="tac-form__field">
+            <span>Phone</span>
+            <input type="tel" name="contact_phone" value="{{customer.phone}}" autocomplete="tel">
+        </label>
+        {{/if}}
+        <label class="tac-form__field">
+            <span>Email <abbr title="required">*</abbr></span>
+            <input type="email" name="contact_email" value="{{customer.email}}" required autocomplete="email">
+        </label>
+        {{#if forms.contact.company}}
+        <label class="tac-form__field">
+            <span>Company</span>
+            <input type="text" name="contact_companyname" autocomplete="organization">
+        </label>
+        {{/if}}
+        {{#if forms.contact.order}}
+        <label class="tac-form__field">
+            <span>Order number</span>
+            <input type="text" name="contact_orderno">
+        </label>
+        {{/if}}
+        {{#if forms.contact.rma}}
+        <label class="tac-form__field">
+            <span>RMA number</span>
+            <input type="text" name="contact_rma">
+        </label>
+        {{/if}}
+    </div>
+    <label class="tac-form__field">
+        <span>How can we help? <abbr title="required">*</abbr></span>
+        <textarea name="contact_question" rows="3" required></textarea>
+    </label>
+    {{#if forms.contact.manualcaptcha}}
+    <label class="tac-form__field">
+        <span>{{forms.contact.manualcaptcha.question}} <abbr title="required">*</abbr></span>
+        <input type="text" name="{{forms.contact.manualcaptcha.name}}" required autocomplete="off">
+    </label>
+    {{/if}}
+    {{{forms.contact.recaptcha.markup}}}
+    <button class="tac-btn tac-btn--solid" type="submit">Send message</button>
+</form>

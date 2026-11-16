@@ -1,0 +1,11 @@
+{{#partial "page"}}
+<script type="application/json" id="tac-page-data">
+{
+  "orderId": {{#if checkout.order.id}}{{{json checkout.order.id}}}{{else}}""{{/if}},
+  "ordersUrl": {{#if urls.account.orders.all}}{{{json urls.account.orders.all}}}{{else}}""{{/if}},
+  "homeUrl": {{#if urls.home}}{{{json urls.home}}}{{else}}""{{/if}}
+}
+</script>
+{{{region name="pb_order_confirmation"}}}
+{{/partial}}
+{{> layout/base}}

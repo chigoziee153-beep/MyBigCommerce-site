@@ -1,0 +1,12 @@
+{{!--
+  Full visible catalog tree. Homepage circles and product filters match the
+  header pills (curated homepage set) and use this tree only to resolve ids.
+  The shop mega menu still lists every visible category.
+--}}
+<template id="tac-category-data">
+    <ul data-tac-cat-tree>
+        {{#each categories}}
+            {{> components/common/category-data-node}}
+        {{/each}}
+    </ul>
+</template>

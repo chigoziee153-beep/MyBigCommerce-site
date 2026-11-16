@@ -1,0 +1,45 @@
+{{#partial "page"}}
+<script type="application/json" id="tac-page-data">
+{ "categoryCount": {{#if category.total_products}}{{category.total_products}}{{else}}null{{/if}} }
+</script>
+<template id="tac-live-category-banner">
+  <div class="tac-plp__banner">
+    <h1>{{category.name}}</h1>
+    {{#if category.description}}
+    <div class="tac-plp__desc">{{{category.description}}}</div>
+    {{/if}}
+  </div>
+</template>
+<template id="tac-live-category-nav">
+  <ul>
+    {{#each categories}}
+      {{#each children}}
+      <li><a href="{{url}}">{{name}}</a></li>
+      {{/each}}
+    {{/each}}
+  </ul>
+</template>
+<template id="tac-live-category-subcats">
+  {{#if category.subcategories}}
+  <nav class="tac-pills tac-pills--plp" aria-label="Subcategories">
+    <div class="tac-pills__track">
+      {{#each category.subcategories}}
+      <a class="tac-pill" href="{{url}}">{{name}}</a>
+      {{/each}}
+    </div>
+  </nav>
+  {{/if}}
+</template>
+<template id="tac-live-category-products">
+  {{#if category.products}}
+  <div class="tac-product-grid">
+    {{#each category.products}}
+      {{> components/products/card}}
+    {{/each}}
+  </div>
+  {{> components/common/pagination}}
+  {{/if}}
+</template>
+{{{region name="pb_category"}}}
+{{/partial}}
+{{> layout/base}}

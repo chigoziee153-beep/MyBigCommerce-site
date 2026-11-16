@@ -1,0 +1,20 @@
+{{#partial "body_class"}} tac-page--content{{/partial}}
+{{#partial "page"}}
+{{!
+  CMS body still server-renders when present.
+  Rich pages Ann edits in Page Builder (Insights, Terms, Privacy, About) keep
+  their HTML in entity pb_page → HTML widgets. Region must sit inside the
+  section so terms/privacy/about CSS :has() rules still apply, and so the
+  fallback title can hide when PB HTML already includes an h1.
+}}
+<section class="tac-simple-page"{{#unless page.content}} aria-labelledby="tac-page-heading"{{/unless}}>
+  {{#unless page.content}}
+  <h1 id="tac-page-heading" class="tac-page-title-fallback">{{page.title}}</h1>
+  {{/unless}}
+  {{#if page.content}}
+  <div class="tac-simple-page__content">{{{page.content}}}</div>
+  {{/if}}
+  {{{region name="pb_page"}}}
+</section>
+{{/partial}}
+{{> layout/base}}

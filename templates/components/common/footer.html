@@ -1,0 +1,87 @@
+<footer class="tac-footer">
+    <div class="tac-footer__inner">
+        {{#if theme_settings.footer_col1_heading}}
+        <div class="tac-footer__col">
+            <h2>{{theme_settings.footer_col1_heading}}</h2>
+            <ul>
+                {{#if theme_settings.footer_show_categories}}
+                    {{#each categories}}
+                    {{#if name}}
+                    <li><a href="{{url}}">{{name}}</a></li>
+                    {{/if}}
+                    {{/each}}
+                {{else}}
+                    {{#if theme_settings.footer_col1_l1_label}}<li><a href="{{theme_settings.footer_col1_l1_url}}">{{theme_settings.footer_col1_l1_label}}</a></li>{{/if}}
+                    {{#if theme_settings.footer_col1_l2_label}}<li><a href="{{theme_settings.footer_col1_l2_url}}">{{theme_settings.footer_col1_l2_label}}</a></li>{{/if}}
+                    {{#if theme_settings.footer_col1_l3_label}}<li><a href="{{theme_settings.footer_col1_l3_url}}">{{theme_settings.footer_col1_l3_label}}</a></li>{{/if}}
+                    {{#if theme_settings.footer_col1_l4_label}}<li><a href="{{theme_settings.footer_col1_l4_url}}">{{theme_settings.footer_col1_l4_label}}</a></li>{{/if}}
+                {{/if}}
+            </ul>
+        </div>
+        {{/if}}
+        {{#if theme_settings.footer_col2_heading}}
+        <div class="tac-footer__col">
+            <h2>{{theme_settings.footer_col2_heading}}</h2>
+            <ul>
+                {{#if theme_settings.footer_col2_l1_label}}<li><a href="{{theme_settings.footer_col2_l1_url}}">{{theme_settings.footer_col2_l1_label}}</a></li>{{/if}}
+                {{#if theme_settings.footer_col2_l2_label}}<li><a href="{{theme_settings.footer_col2_l2_url}}">{{theme_settings.footer_col2_l2_label}}</a></li>{{/if}}
+                {{#if theme_settings.footer_col2_l3_label}}<li><a href="{{theme_settings.footer_col2_l3_url}}">{{theme_settings.footer_col2_l3_label}}</a></li>{{/if}}
+                {{#if theme_settings.footer_col2_l4_label}}<li><a href="{{theme_settings.footer_col2_l4_url}}">{{theme_settings.footer_col2_l4_label}}</a></li>{{/if}}
+            </ul>
+        </div>
+        {{/if}}
+        {{#if theme_settings.footer_col3_heading}}
+        <div class="tac-footer__col">
+            <h2>{{theme_settings.footer_col3_heading}}</h2>
+            <ul>
+                {{#if theme_settings.footer_col3_l1_label}}<li><a href="{{theme_settings.footer_col3_l1_url}}">{{theme_settings.footer_col3_l1_label}}</a></li>{{/if}}
+                {{#if theme_settings.footer_col3_l2_label}}<li><a href="{{theme_settings.footer_col3_l2_url}}">{{theme_settings.footer_col3_l2_label}}</a></li>{{/if}}
+                {{#if theme_settings.footer_col3_l3_label}}<li><a href="{{theme_settings.footer_col3_l3_url}}">{{theme_settings.footer_col3_l3_label}}</a></li>{{/if}}
+                {{#if theme_settings.footer_col3_l4_label}}<li><a href="{{theme_settings.footer_col3_l4_url}}">{{theme_settings.footer_col3_l4_label}}</a></li>{{/if}}
+            </ul>
+        </div>
+        {{/if}}
+        {{#if theme_settings.footer_col4_heading}}
+        <div class="tac-footer__col">
+            <h2>{{theme_settings.footer_col4_heading}}</h2>
+            <ul>
+                {{#if theme_settings.footer_col4_l1_label}}<li><a href="{{theme_settings.footer_col4_l1_url}}">{{theme_settings.footer_col4_l1_label}}</a></li>{{/if}}
+                {{#if theme_settings.footer_col4_l2_label}}<li><a href="{{theme_settings.footer_col4_l2_url}}">{{theme_settings.footer_col4_l2_label}}</a></li>{{/if}}
+                {{#if theme_settings.footer_col4_l3_label}}<li><a href="{{theme_settings.footer_col4_l3_url}}">{{theme_settings.footer_col4_l3_label}}</a></li>{{/if}}
+                {{#if theme_settings.footer_col4_l4_label}}<li><a href="{{theme_settings.footer_col4_l4_url}}">{{theme_settings.footer_col4_l4_label}}</a></li>{{/if}}
+            </ul>
+        </div>
+        {{/if}}
+        <div class="tac-footer__brand">
+            <form id="tac-newsletter-form" class="tac-footer-newsletter" method="post" aria-label="Newsletter signup">
+                <label class="tac-footer-newsletter__label" for="tac-newsletter-email">Newsletter</label>
+                <div class="tac-footer-newsletter__row">
+                    <input id="tac-newsletter-email" name="email" type="email"
+                           autocomplete="email" maxlength="320" required
+                           placeholder="Email address">
+                    <button type="submit">Subscribe</button>
+                </div>
+                <div class="tac-newsletter-trap" aria-hidden="true">
+                    <input name="website" type="text" tabindex="-1" autocomplete="off">
+                </div>
+                <div id="tac-newsletter-turnstile" class="tac-newsletter-turnstile"></div>
+                <p class="tac-newsletter-error tac-footer-newsletter__error" role="alert" hidden></p>
+            </form>
+            <p class="tac-footer__mark">{{theme_settings.brand_name}}</p>
+            <p class="tac-footer__tag">Technology <span class="tac-assurance">ASSURANCE</span> Cooperative</p>
+            <p class="tac-footer__legal">&copy; 2026 Technology <span class="tac-assurance">ASSURANCE</span> Cooperative</p>
+            {{#if theme_settings.footer_address_1}}
+            <address class="tac-footer__address">
+                {{theme_settings.footer_address_1}}{{#if theme_settings.footer_address_2}}<br>{{theme_settings.footer_address_2}}{{/if}}{{#if theme_settings.footer_address_3}}<br>{{theme_settings.footer_address_3}}{{/if}}
+            </address>
+            {{/if}}
+        </div>
+    </div>
+</footer>
+<script>
+window.tacNewsletterTurnstileLoad = function () {
+  window.__tacTurnstileReady = true;
+  if (window.__tacNewsletterRender) window.__tacNewsletterRender();
+};
+</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=tacNewsletterTurnstileLoad" async defer></script>

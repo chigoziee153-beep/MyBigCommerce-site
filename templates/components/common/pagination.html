@@ -1,0 +1,10 @@
+{{#if pagination.category}}
+<nav class="tac-pagination" aria-label="Pagination">
+    {{#if pagination.category.previous}}
+    <a href="{{pagination.category.previous}}">Previous</a>
+    {{/if}}
+    {{#if pagination.category.next}}
+    <a href="{{pagination.category.next}}">Next</a>
+    {{/if}}
+</nav>
+{{/if}}

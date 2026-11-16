@@ -1,0 +1,9 @@
+{{!-- Recursive mega-menu item for one catalog category + its visible children. --}}
+{{#if url}}
+<li><a href="{{url}}">{{name}}</a></li>
+{{/if}}
+{{#if children}}
+    {{#each children}}
+        {{> components/common/category-mega-node}}
+    {{/each}}
+{{/if}}

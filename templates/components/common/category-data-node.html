@@ -1,0 +1,15 @@
+{{!-- One category node (+ nested children) for live catalog dump. --}}
+<li
+    data-tac-cat-id="{{id}}"
+    data-tac-cat-name="{{name}}"
+    {{#if url}}data-tac-cat-url="{{url}}"{{/if}}
+    {{#if image.data}}data-tac-cat-image="{{image.data}}"{{else}}{{#if image}}data-tac-cat-image="{{image}}"{{/if}}{{/if}}
+>
+    {{#if children}}
+    <ul>
+        {{#each children}}
+            {{> components/common/category-data-node}}
+        {{/each}}
+    </ul>
+    {{/if}}
+</li>

@@ -1,0 +1,16 @@
+{{#partial "page"}}
+<script type="application/json" id="tac-page-data">
+{ "query": {{#if forms.search.query}}{{{json forms.search.query}}}{{else}}""{{/if}} }
+</script>
+<template id="tac-live-search-products">
+  {{#if product_results.products}}
+  <div class="tac-product-grid">
+    {{#each product_results.products}}
+      {{> components/products/card}}
+    {{/each}}
+  </div>
+  {{/if}}
+</template>
+{{{region name="pb_search"}}}
+{{/partial}}
+{{> layout/base}}

@@ -1,0 +1,13 @@
+{{#partial "page"}}
+<template id="tac-live-blog-list">
+  {{#if blog.posts}}
+  <ul class="tac-account-list">
+    {{#each blog.posts}}
+    <li><a href="{{url}}">{{title}}</a></li>
+    {{/each}}
+  </ul>
+  {{/if}}
+</template>
+{{{region name="pb_blog"}}}
+{{/partial}}
+{{> layout/base}}
