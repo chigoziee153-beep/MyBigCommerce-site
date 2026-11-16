@@ -6,9 +6,7 @@ BigCommerce Stencil theme for TAC-USA 2026 (development / staging).
 - Header / pills / footer: Theme Editor
 - Makeswift: **off**
 - Catalog: live PLP / PDP / search
-
-Storefront: https://bigcommercepros-staging.mybigcommerce.com/  
-Store name: TAC Concept STAGING  
+  
 Theme: TAC-USA 2026 · Blank · v1.0.0  
 
 ## Commands
